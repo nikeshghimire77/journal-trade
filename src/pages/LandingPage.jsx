@@ -125,9 +125,9 @@ function LandingPage() {
                             </p>
                             <div className="hero-actions">
                                 <div className="action-buttons">
-                                    <Link to="/journal" className="btn btn-primary btn-large">
+                                    <Link to="/signup" className="btn btn-primary btn-large">
                                         <BookOpen size={20} />
-                                        <span>Start Your Journey</span>
+                                        <span>Get Started</span>
                                     </Link>
                                     <Link to="/upload" className="btn btn-secondary btn-large">
                                         <Upload size={20} />

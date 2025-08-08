@@ -18,12 +18,18 @@ function Navigation() {
             icon: BookOpen,
             description: "Add and manage your trades"
         },
-                       {
-                   path: "/upload",
-                   label: "Upload",
-                   icon: Upload,
-                   description: "Backup & restore journal data"
-               }
+        {
+            path: "/analytics",
+            label: "Analytics",
+            icon: BarChart3,
+            description: "Strategy performance analysis"
+        },
+        {
+            path: "/upload",
+            label: "Upload",
+            icon: Upload,
+            description: "Backup & restore journal data"
+        }
     ];
 
     return (

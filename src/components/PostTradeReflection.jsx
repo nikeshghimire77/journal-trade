@@ -119,12 +119,12 @@ function PostTradeReflection({ data, onUpdate, isExpanded, onToggle }) {
                             {saveStatus === 'saving' ? (
                                 <>
                                     <Clock size={16} />
-                                    Saving...
+                                    💾 Auto-saving...
                                 </>
                             ) : (
                                 <>
                                     <CheckCircle size={16} />
-                                    Saved successfully!
+                                    ✅ Reflection saved!
                                 </>
                             )}
                         </div>

@@ -4,6 +4,8 @@ import Navigation from "./components/Navigation";
 import LandingPage from "./pages/LandingPage";
 import JournalEntry from "./pages/JournalEntry";
 import CSVUpload from "./pages/CSVUpload";
+import SignUp from "./pages/SignUp";
+import StrategyAnalytics from "./pages/StrategyAnalytics";
 
 function App() {
     return (
@@ -13,8 +15,10 @@ function App() {
                 <main className="main-content">
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
+                        <Route path="/signup" element={<SignUp />} />
                         <Route path="/journal" element={<JournalEntry />} />
                         <Route path="/upload" element={<CSVUpload />} />
+                        <Route path="/analytics" element={<StrategyAnalytics />} />
                     </Routes>
                 </main>
             </div>

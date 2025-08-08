@@ -12,10 +12,10 @@ function JournalEntry() {
     });
     const [lastSaved, setLastSaved] = useState(null);
     const [expandedSections, setExpandedSections] = useState({
-        tradeEntry: true,
-        postTrade: true,
-        dailySummary: true,
-        download: true
+        tradeEntry: true, // Keep trade entry open by default
+        postTrade: false, // Collapse post-trade reflection
+        dailySummary: false, // Collapse daily summary
+        download: false // Collapse download options
     });
 
     // Load data from localStorage on component mount
@@ -40,10 +40,15 @@ function JournalEntry() {
     }, [trades, journalData]);
 
     const toggleSection = (section) => {
-        setExpandedSections(prev => ({
-            ...prev,
-            [section]: !prev[section]
-        }));
+        console.log('Toggling section:', section);
+        setExpandedSections(prev => {
+            const newState = {
+                ...prev,
+                [section]: !prev[section]
+            };
+            console.log('New expanded sections state:', newState);
+            return newState;
+        });
     };
 
     const updateJournalData = (field, value) => {
@@ -60,6 +65,8 @@ function JournalEntry() {
             timestamp: new Date().toISOString()
         };
         setTrades(prev => [...prev, newTrade]);
+        // Keep all sections expanded as they were
+        // Don't reset expandedSections state
     };
 
     const updateTrade = (id, updatedTrade) => {
