@@ -454,6 +454,177 @@ body::after {
     font-weight: 500;
 }
 
+/* 🌌 PORTAL JOURNAL FORM STYLES */
+.trade-form.portal-style {
+    background: linear-gradient(135deg, rgba(15, 15, 35, 0.95), rgba(20, 20, 45, 0.95), rgba(25, 25, 55, 0.95));
+    border: 2px solid rgba(16, 185, 129, 0.4);
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 8px 32px rgba(16, 185, 129, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    animation: portalFormGlow 3s ease-in-out infinite;
+}
+
+.trade-form.portal-style::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #10b981, #06b6d4, #8b5cf6, #ec4899, #f59e0b);
+    border-radius: 20px;
+    z-index: -1;
+    animation: portalFormBorderGlow 2s linear infinite;
+}
+
+.trade-form.portal-style::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1), transparent 70%);
+    border-radius: 20px;
+    animation: portalFormEnergy 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes portalFormGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 8px 32px rgba(16, 185, 129, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    50% {
+        box-shadow:
+            0 12px 48px rgba(16, 185, 129, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes portalFormBorderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes portalFormEnergy {
+
+    0%,
+    100% {
+        opacity: 0.1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(1.05);
+    }
+}
+
+/* Portal Form Sections */
+.trade-form.portal-style .form-section {
+    position: relative;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: rgba(15, 15, 35, 0.95);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.trade-form.portal-style .form-section:hover {
+    background: rgba(20, 20, 45, 0.98);
+    border-color: rgba(16, 185, 129, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.trade-form.portal-style .form-section h3 {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+    font-weight: 600;
+}
+
+/* Portal Form Controls */
+.trade-form.portal-style .form-control {
+    background: rgba(30, 30, 50, 0.9);
+    border: 2px solid rgba(16, 185, 129, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.trade-form.portal-style .form-control:focus {
+    border-color: rgba(16, 185, 129, 0.7);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    background: rgba(40, 40, 60, 0.95);
+}
+
+.trade-form.portal-style .form-control:not(:placeholder-shown) {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+}
+
+/* Portal Form Labels */
+.trade-form.portal-style label {
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Portal Particles for Filled Fields */
+.trade-form.portal-style .form-group.filled::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: portalParticleFloat 2s ease-in-out infinite;
+    z-index: 10;
+}
+
+@keyframes portalParticleFloat {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translateY(-50%) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.2);
+    }
+}
+
 /* Calculated Fields */
 .calculated-field {
     background: rgba(16, 185, 129, 0.1) !important;
@@ -3306,90 +3477,400 @@ textarea.form-control:focus::before {
     }
 }
 
-/* Navigation Styling */
+/* 🚀 FUTURISTIC HOLOGRAPHIC NAVIGATION */
 .navigation {
-    background: rgba(15, 15, 35, 0.95);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(5, 5, 15, 0.98), rgba(15, 15, 35, 0.95));
+    border-bottom: 2px solid rgba(0, 255, 255, 0.2);
     backdrop-filter: blur(20px);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 255, 255, 0.1);
+    overflow: hidden;
 }
 
-.nav-container {
-    max-width: 1200px;
+.nav-holographic-container {
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    gap: 4px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 70px;
 }
 
-.nav-item {
+.nav-scan-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 255, 0.03) 2px,
+            rgba(0, 255, 255, 0.03) 4px);
+    animation: scanLines 2s linear infinite;
+    pointer-events: none;
+}
+
+.nav-grid-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 10s linear infinite;
+    pointer-events: none;
+}
+
+.nav-energy-field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 255, 255, 0.05), transparent 70%);
+    animation: energyPulse 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* 🎯 BRAND LOGO */
+.nav-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-    font-weight: 500;
-    font-size: 0.9rem;
+    gap: 12px;
+    z-index: 10;
 }
 
-.nav-item:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.nav-item.active {
-    color: #ffffff;
-    background: rgba(79, 70, 229, 0.2);
-    border: 1px solid rgba(79, 70, 229, 0.3);
-}
-
-.nav-icon {
+.brand-logo {
+    position: relative;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
+}
+
+.logo-orbit {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid transparent;
+    border-top-color: #00ffff;
+    border-right-color: #ff00ff;
+    border-radius: 50%;
+    animation: logoOrbit 3s linear infinite;
+}
+
+.logo-core {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #00ffff, #ff00ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: #000;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    z-index: 2;
+}
+
+.logo-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: logoPulse 2s ease-in-out infinite;
+}
+
+.brand-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* 🎮 NAVIGATION ITEMS */
+.nav-items-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+.nav-holo-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.holo-item-glow {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ffff);
+    border-radius: 8px;
+    opacity: 0;
+    animation: holoGlow 3s linear infinite;
+    z-index: -1;
+}
+
+.holo-item-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+}
+
+.holo-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-hologram {
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.icon-scan {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    border-radius: 4px;
+    opacity: 0;
+    animation: iconScan 2s ease-in-out infinite;
+}
+
+.icon-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.icon-particles .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 0;
+    animation: iconParticles 1.5s ease-in-out infinite;
+}
+
+.icon-particles .particle:nth-child(1) {
+    top: 0;
+    right: 0;
+    animation-delay: 0s;
+}
+
+.icon-particles .particle:nth-child(2) {
+    bottom: 0;
+    left: 0;
+    animation-delay: 0.5s;
+}
+
+.icon-particles .particle:nth-child(3) {
+    top: 50%;
+    right: -5px;
+    animation-delay: 1s;
+}
+
+.holo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.holo-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.holo-status {
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: rgba(0, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.holo-item-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+    background-size: 200% 200%;
+    opacity: 0;
+    animation: borderFlow 2s linear infinite;
+}
+
+.connection-line {
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+    transition: width 0.4s ease;
+}
+
+/* 🎯 HOVER & ACTIVE STATES */
+.nav-holo-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.nav-holo-item:hover .holo-item-glow {
+    opacity: 0.6;
+}
+
+.nav-holo-item:hover .icon-hologram {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.nav-holo-item:hover .icon-scan {
+    opacity: 1;
+}
+
+.nav-holo-item:hover .holo-item-border {
+    opacity: 1;
+}
+
+.nav-holo-item:hover .connection-line {
+    width: 60%;
+}
+
+.nav-holo-item.active {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.2));
+    border-color: rgba(255, 215, 0, 0.8);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.nav-holo-item.active .holo-item-glow {
     opacity: 0.8;
 }
 
-.nav-item:hover .nav-icon {
-    opacity: 1;
+.nav-holo-item.active .icon-hologram {
+    color: #ffd700;
 }
 
-.nav-item.active .nav-icon {
-    opacity: 1;
+.nav-holo-item.active .holo-status {
+    color: #ffd700;
 }
 
-.nav-content {
+.nav-holo-item.active .connection-line {
+    width: 80%;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+}
+
+/* 🔋 STATUS PANEL */
+.nav-status-panel {
     display: flex;
-    flex-direction: column;
-    gap: 1px;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
 }
 
-.nav-label {
-    font-weight: 500;
-    font-size: 0.9rem;
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff0000;
+    animation: statusBlink 2s ease-in-out infinite;
 }
 
-.nav-description {
+.status-indicator.active {
+    background: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.status-text {
     font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 400;
-    display: none;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.nav-item:hover .nav-description {
-    color: rgba(255, 255, 255, 0.6);
+.power-level {
+    display: flex;
+    gap: 2px;
+    align-items: flex-end;
 }
 
-.nav-item.active .nav-description {
-    color: rgba(255, 255, 255, 0.7);
+.power-bar {
+    width: 3px;
+    background: rgba(0, 255, 255, 0.3);
+    border-radius: 1px;
+    animation: powerLevel 1s ease-in-out infinite;
+}
+
+.power-bar:nth-child(1) {
+    height: 8px;
+    animation-delay: 0s;
+}
+
+.power-bar:nth-child(2) {
+    height: 12px;
+    animation-delay: 0.2s;
+}
+
+.power-bar:nth-child(3) {
+    height: 16px;
+    animation-delay: 0.4s;
+}
+
+.power-bar:nth-child(4) {
+    height: 20px;
+    animation-delay: 0.6s;
 }
 
 /* App Layout */
@@ -3547,6 +4028,66 @@ textarea.form-control:focus::before {
     animation-delay: 2.3s;
 }
 
+.star-11 {
+    top: 25%;
+    left: 15%;
+    animation-delay: 3.1s;
+}
+
+.star-12 {
+    top: 45%;
+    left: 90%;
+    animation-delay: 1.2s;
+}
+
+.star-13 {
+    top: 75%;
+    left: 25%;
+    animation-delay: 2.8s;
+}
+
+.star-14 {
+    top: 35%;
+    left: 5%;
+    animation-delay: 0.9s;
+}
+
+.star-15 {
+    top: 65%;
+    left: 85%;
+    animation-delay: 3.5s;
+}
+
+.star-16 {
+    top: 15%;
+    left: 65%;
+    animation-delay: 1.7s;
+}
+
+.star-17 {
+    top: 85%;
+    left: 35%;
+    animation-delay: 2.1s;
+}
+
+.star-18 {
+    top: 55%;
+    left: 95%;
+    animation-delay: 0.4s;
+}
+
+.star-19 {
+    top: 95%;
+    left: 10%;
+    animation-delay: 3.8s;
+}
+
+.star-20 {
+    top: 5%;
+    left: 45%;
+    animation-delay: 1.5s;
+}
+
 /* Falling Stars */
 .falling-stars {
     position: absolute;
@@ -3610,6 +4151,66 @@ textarea.form-control:focus::before {
     animation-delay: 0.5s;
 }
 
+.falling-star-6 {
+    top: -10px;
+    left: 45%;
+    animation-delay: 6s;
+}
+
+.falling-star-7 {
+    top: -10px;
+    left: 15%;
+    animation-delay: 8s;
+}
+
+.falling-star-8 {
+    top: -10px;
+    left: 75%;
+    animation-delay: 4.5s;
+}
+
+.falling-star-9 {
+    top: -10px;
+    left: 35%;
+    animation-delay: 7.5s;
+}
+
+.falling-star-10 {
+    top: -10px;
+    left: 90%;
+    animation-delay: 2.5s;
+}
+
+.falling-star-11 {
+    top: -10px;
+    left: 25%;
+    animation-delay: 9s;
+}
+
+.falling-star-12 {
+    top: -10px;
+    left: 65%;
+    animation-delay: 1.5s;
+}
+
+.falling-star-13 {
+    top: -10px;
+    left: 5%;
+    animation-delay: 5.5s;
+}
+
+.falling-star-14 {
+    top: -10px;
+    left: 85%;
+    animation-delay: 3.5s;
+}
+
+.falling-star-15 {
+    top: -10px;
+    left: 55%;
+    animation-delay: 6.5s;
+}
+
 @keyframes twinkle {
 
     0%,
@@ -3664,11 +4265,22 @@ textarea.form-control:focus::before {
 
 .hero-content {
     display: grid;
-    grid-template-columns: auto 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr;
+    gap: 40px;
     align-items: center;
     position: relative;
     z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        text-align: left;
+    }
 }
 
 .hero-logo {
@@ -3742,16 +4354,525 @@ textarea.form-control:focus::before {
     margin-top: 40px;
 }
 
-.action-buttons {
+/* 🎯 MODERN CTA BUTTONS CONTAINER */
+.cta-buttons-container {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+    margin-bottom: 20px;
+}
+
+/* 🚀 PRIMARY CTA BUTTON */
+.primary-cta-btn {
+    position: relative;
+    display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 8px;
+    padding: 20px 32px;
+    background: rgba(15, 15, 35, 0.95);
+    border: 2px solid rgba(79, 70, 229, 0.4);
     border-radius: 16px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 8px 32px rgba(79, 70, 229, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.primary-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(124, 58, 237, 0.1));
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.primary-cta-btn:hover::before {
+    opacity: 1;
+}
+
+.primary-cta-btn:hover {
+    transform: translateY(-4px);
+    border-color: rgba(79, 70, 229, 0.6);
+    box-shadow:
+        0 12px 48px rgba(79, 70, 229, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* 🎨 SECONDARY CTA BUTTON */
+.secondary-cta-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px 32px;
+    background: rgba(15, 15, 35, 0.95);
+    border: 2px solid rgba(16, 185, 129, 0.4);
+    border-radius: 16px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 8px 32px rgba(16, 185, 129, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.secondary-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1));
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.secondary-cta-btn:hover::before {
+    opacity: 1;
+}
+
+.secondary-cta-btn:hover {
+    transform: translateY(-4px);
+    border-color: rgba(16, 185, 129, 0.6);
+    box-shadow:
+        0 12px 48px rgba(16, 185, 129, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* 📱 BUTTON CONTENT */
+.btn-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.icon-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    animation: iconRipple 2s ease-in-out infinite;
+}
+
+@keyframes iconRipple {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+.btn-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.btn-main-text {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+}
+
+.btn-sub-text {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.btn-arrow {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.primary-cta-btn:hover .btn-arrow,
+.secondary-cta-btn:hover .btn-arrow {
+    transform: translateX(4px);
+    color: #ffffff;
+}
+
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.primary-cta-btn:hover .btn-shine,
+.secondary-cta-btn:hover .btn-shine {
+    left: 100%;
+}
+
+
+
+/* 📱 RESPONSIVE DESIGN */
+@media (min-width: 768px) {
+    .cta-buttons-container {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .primary-cta-btn,
+    .secondary-cta-btn {
+        flex: 1;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .primary-cta-btn,
+    .secondary-cta-btn {
+        padding: 18px 24px;
+    }
+
+    .btn-main-text {
+        font-size: 1rem;
+    }
+
+    .btn-sub-text {
+        font-size: 0.8rem;
+    }
+
+    .btn-icon-wrapper {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* 🚀 ROCKET BUTTON - Launch Trading Journey */
+.btn-rocket {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899);
+    border: 2px solid transparent;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4), 0 0 40px rgba(124, 58, 237, 0.3);
+    animation: rocketFloat 3s ease-in-out infinite;
+    min-width: 280px;
+    justify-content: center;
+}
+
+.btn-rocket::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #4f46e5, #7c3aed, #ec4899, #10b981, #f59e0b);
+    border-radius: 50px;
+    z-index: -1;
+    animation: rocketBorderGlow 2s linear infinite;
+}
+
+.btn-rocket-trail {
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #4f46e5, #7c3aed);
+    border-radius: 2px;
+    animation: rocketTrail 2s ease-in-out infinite;
+}
+
+.btn-rocket-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+}
+
+.btn-rocket-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+    border-radius: 50%;
+    animation: iconPulse 1.5s ease-in-out infinite;
+}
+
+.btn-rocket-particles {
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.btn-rocket-particles::before,
+.btn-rocket-particles::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: rocketParticles 1s ease-in-out infinite;
+}
+
+.btn-rocket-particles::before {
+    top: 2px;
+    right: 0;
+    animation-delay: 0s;
+}
+
+.btn-rocket-particles::after {
+    bottom: 2px;
+    right: 5px;
+    animation-delay: 0.5s;
+}
+
+.btn-rocket-boost {
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 8px;
+    background: linear-gradient(90deg, rgba(79, 70, 229, 0.8), transparent);
+    border-radius: 4px;
+    opacity: 0;
+    animation: rocketBoost 2s ease-in-out infinite;
+}
+
+.btn-rocket:hover {
+    transform: translateX(10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(79, 70, 229, 0.6), 0 0 60px rgba(124, 58, 237, 0.5);
+}
+
+.btn-rocket:hover .btn-rocket-boost {
+    opacity: 1;
+    width: 50px;
+}
+
+/* 🌌 PORTAL BUTTON - Restore Trading Data */
+.btn-portal {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #10b981, #06b6d4, #8b5cf6);
+    border: 2px solid transparent;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4), 0 0 40px rgba(6, 182, 212, 0.3);
+    animation: portalFloat 4s ease-in-out infinite;
+    min-width: 280px;
+    justify-content: center;
+}
+
+.btn-portal::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #10b981, #06b6d4, #8b5cf6, #ec4899, #f59e0b);
+    border-radius: 50px;
+    z-index: -1;
+    animation: portalBorderGlow 2s linear infinite;
+}
+
+.btn-portal-ring {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #10b981, #06b6d4, #8b5cf6, #10b981);
+    background-size: 200% 200%;
+    animation: portalRingRotate 3s linear infinite;
+    z-index: -1;
+}
+
+.portal-energy {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 48px;
+    background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.1), transparent);
+    animation: portalEnergy 2s ease-in-out infinite;
+}
+
+.portal-swirl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 50%;
+    border-top-color: rgba(16, 185, 129, 0.6);
+    animation: portalSwirl 2s linear infinite;
+}
+
+.btn-portal-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+}
+
+.btn-portal-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-beam {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(to top, transparent, #10b981);
+    animation: uploadBeam 1.5s ease-in-out infinite;
+}
+
+.btn-portal-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.btn-portal-particles .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #10b981;
+    border-radius: 50%;
+    opacity: 0;
+    animation: portalParticles 2s ease-in-out infinite;
+}
+
+.btn-portal-particles .particle:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.btn-portal-particles .particle:nth-child(2) {
+    top: 20%;
+    right: 20%;
+    animation-delay: 0.5s;
+}
+
+.btn-portal-particles .particle:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.btn-portal-particles .particle:nth-child(4) {
+    bottom: 20%;
+    right: 20%;
+    animation-delay: 1.5s;
+}
+
+.btn-portal:hover {
+    transform: translateX(10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.6), 0 0 60px rgba(6, 182, 212, 0.5);
+}
+
+.btn-portal:hover .portal-swirl {
+    animation-duration: 1s;
 }
 
 .btn-large {
@@ -3862,16 +4983,19 @@ textarea.form-control:focus::before {
     padding: 20px;
 }
 
-.price-line {
+.trend-line {
     position: absolute;
-    top: 0;
+    top: 70%;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #10b981, #4f46e5, #f59e0b, #ef4444);
-    border-radius: 1px;
-    animation: priceMove 8s linear infinite;
-    z-index: 5;
+    height: 3px;
+    background: linear-gradient(90deg, #10b981, #22c55e);
+    border-radius: 2px;
+    transform: rotate(-15deg);
+    transform-origin: left center;
+    animation: trendGlow 3s ease-in-out infinite;
+    z-index: 4;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
 }
 
 .price-line::before {
@@ -3885,25 +5009,65 @@ textarea.form-control:focus::before {
     animation: priceGlow 4s ease-in-out infinite;
 }
 
-.volume-bars {
+.candlestick-chart {
     position: absolute;
     bottom: 40px;
     left: 20px;
     right: 20px;
-    height: 60px;
+    height: 120px;
     display: flex;
-    gap: 2px;
+    gap: 8px;
     align-items: flex-end;
     z-index: 3;
 }
 
-.volume-bar {
+.candlestick {
     flex: 1;
-    background: linear-gradient(to top, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0.2));
-    border-radius: 1px;
-    animation: volumePulse 2s ease-in-out infinite;
-    opacity: 0;
+    position: relative;
+    animation: candleGrow 2s ease-in-out infinite;
     animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.candlestick.bullish .candle-body {
+    background: #10b981;
+    border: 2px solid #059669;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.candlestick.bearish .candle-body {
+    background: #ef4444;
+    border: 2px solid #dc2626;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+.candle-wick {
+    position: absolute;
+    left: 50%;
+    top: -20%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 140%;
+    background: #6b7280;
+    z-index: 1;
+}
+
+.candle-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+.candlestick.bullish .candle-wick {
+    background: #10b981;
+}
+
+.candlestick.bearish .candle-wick {
+    background: #ef4444;
 }
 
 .trade-signal {
@@ -3911,11 +5075,11 @@ textarea.form-control:focus::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     background: #10b981;
     border-radius: 50%;
-    box-shadow: 0 0 20px #10b981;
+    box-shadow: 0 0 25px #10b981, 0 0 40px rgba(16, 185, 129, 0.5);
     animation: signalPulse 1.5s ease-in-out infinite;
     z-index: 10;
 }
@@ -4007,6 +5171,30 @@ textarea.form-control:focus::before {
     }
 }
 
+@keyframes priceWave {
+
+    0%,
+    100% {
+        top: 30%;
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+    }
+
+    25% {
+        top: 20%;
+        box-shadow: 0 0 15px rgba(79, 70, 229, 0.7);
+    }
+
+    50% {
+        top: 40%;
+        box-shadow: 0 0 20px rgba(245, 158, 11, 0.8);
+    }
+
+    75% {
+        top: 25%;
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.7);
+    }
+}
+
 @keyframes priceGlow {
 
     0%,
@@ -4019,7 +5207,7 @@ textarea.form-control:focus::before {
     }
 }
 
-@keyframes volumePulse {
+@keyframes candleGrow {
     0% {
         opacity: 0;
         transform: scaleY(0);
@@ -4027,12 +5215,26 @@ textarea.form-control:focus::before {
 
     50% {
         opacity: 1;
-        transform: scaleY(1);
+        transform: scaleY(1.05);
     }
 
     100% {
-        opacity: 0.8;
+        opacity: 1;
         transform: scaleY(1);
+    }
+}
+
+@keyframes trendGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
+        opacity: 0.8;
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(16, 185, 129, 1);
+        opacity: 1;
     }
 }
 
@@ -4095,6 +5297,333 @@ textarea.form-control:focus::before {
 
     50% {
         opacity: 0.3;
+    }
+}
+
+@keyframes chartFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 🚀 ROCKET BUTTON ANIMATIONS */
+@keyframes rocketFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes rocketBorderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes portalBorderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes rocketTrail {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+
+    50% {
+        width: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+@keyframes rocketParticles {
+    0% {
+        opacity: 0;
+        transform: translateX(0) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-10px) scale(0.8);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-20px) scale(0.5);
+    }
+}
+
+@keyframes rocketBoost {
+
+    0%,
+    100% {
+        opacity: 0;
+        width: 30px;
+    }
+
+    50% {
+        opacity: 0.8;
+        width: 40px;
+    }
+}
+
+/* 🌌 PORTAL BUTTON ANIMATIONS */
+@keyframes portalFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    33% {
+        transform: translateY(-3px);
+    }
+
+    66% {
+        transform: translateY(3px);
+    }
+}
+
+@keyframes portalRingRotate {
+    0% {
+        background-position: 0% 50%;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        background-position: 100% 50%;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes portalEnergy {
+
+    0%,
+    100% {
+        opacity: 0.1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes portalSwirl {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes uploadBeam {
+
+    0%,
+    100% {
+        opacity: 0;
+        height: 20px;
+    }
+
+    50% {
+        opacity: 1;
+        height: 30px;
+    }
+}
+
+@keyframes portalParticles {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+/* 🚀 HOLOGRAPHIC NAVIGATION ANIMATIONS */
+@keyframes scanLines {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes gridMove {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+@keyframes energyPulse {
+
+    0%,
+    100% {
+        opacity: 0.05;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.15;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes logoOrbit {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+@keyframes holoGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes iconScan {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes iconParticles {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5) translateY(-10px);
+    }
+}
+
+@keyframes borderFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes statusBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes powerLevel {
+
+    0%,
+    100% {
+        background: rgba(0, 255, 255, 0.3);
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+    }
+
+    50% {
+        background: rgba(0, 255, 255, 0.8);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
     }
 }
 
@@ -5516,9 +7045,7 @@ textarea.form-control:focus::before {
     overflow: hidden;
 }
 
-.entry-header {
-    /* Styles moved to .card-header since we're using that now */
-}
+/* .entry-header styles moved to .card-header since we're using that now */
 
 .header-content {
     display: flex;

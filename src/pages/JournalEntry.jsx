@@ -13,9 +13,9 @@ function JournalEntry() {
     const [lastSaved, setLastSaved] = useState(null);
     const [expandedSections, setExpandedSections] = useState({
         tradeEntry: true, // Keep trade entry open by default
-        postTrade: false, // Collapse post-trade reflection
-        dailySummary: false, // Collapse daily summary
-        download: false // Collapse download options
+        postTrade: true, // Expand post-trade reflection
+        dailySummary: true, // Expand daily summary
+        download: true // Expand download options
     });
 
     // Load data from localStorage on component mount
@@ -83,44 +83,6 @@ function JournalEntry() {
         <div className="container">
             <div className="header">
                 <div className="header-top">
-                    <div className="custom-logo">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            {/* Gradients */}
-                            <defs>
-                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style={{ stopColor: '#4f46e5', stopOpacity: 1 }} />
-                                    <stop offset="50%" style={{ stopColor: '#10b981', stopOpacity: 1 }} />
-                                    <stop offset="100%" style={{ stopColor: '#f59e0b', stopOpacity: 1 }} />
-                                </linearGradient>
-                                <linearGradient id="innerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style={{ stopColor: '#1f2937', stopOpacity: 1 }} />
-                                    <stop offset="100%" style={{ stopColor: '#374151', stopOpacity: 1 }} />
-                                </linearGradient>
-                                <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style={{ stopColor: '#ffffff', stopOpacity: 1 }} />
-                                    <stop offset="100%" style={{ stopColor: '#e5e7eb', stopOpacity: 1 }} />
-                                </linearGradient>
-                            </defs>
-
-                            {/* Outer ring with gradient */}
-                            <circle cx="25" cy="25" r="23" stroke="url(#logoGradient)" strokeWidth="2" fill="none" />
-
-                            {/* Inner circle */}
-                            <circle cx="25" cy="25" r="15" fill="url(#innerGradient)" />
-
-                            {/* Chart line going up */}
-                            <path d="M10 30 L15 25 L20 28 L25 20 L30 22 L35 18 L40 21"
-                                stroke="#10b981" strokeWidth="2" fill="none" strokeLinecap="round" />
-
-                            {/* NG Text */}
-                            <text x="25" y="22" textAnchor="middle" fill="#ffffff" fontSize="12" fontWeight="bold" fontFamily="Arial, sans-serif" filter="drop-shadow(0 0 4px rgba(255, 255, 255, 0.8))">NG</text>
-
-                            {/* Small trading indicator dots */}
-                            <circle cx="15" cy="25" r="1.5" fill="#10b981" />
-                            <circle cx="25" cy="20" r="1.5" fill="#f59e0b" />
-                            <circle cx="35" cy="18" r="1.5" fill="#ef4444" />
-                        </svg>
-                    </div>
                     <div className="header-title">
                         <h1>Trading Journal</h1>
                         <p>Track your trades, learn from your decisions, and improve your strategy</p>

@@ -574,6 +574,22 @@ function TradeEntry({ trades, onAddTrade, onUpdateTrade, onDeleteTrade, isExpand
         }));
     };
 
+    // Check if form has enough data to activate portal style
+    const isFormFilled = () => {
+        const requiredFields = ['ticker', 'entry', 'position'];
+        const optionalFields = ['actualTarget', 'actualStopLoss', 'pnl', 'notes', 'strategyType'];
+
+        const requiredFilled = requiredFields.every(field => formData[field]);
+        const optionalFilled = optionalFields.filter(field => formData[field]).length;
+
+        return requiredFilled && optionalFilled >= 2; // At least 2 optional fields filled
+    };
+
+    // Check if a form group should show as filled
+    const isFieldFilled = (fieldName) => {
+        return formData[fieldName] && formData[fieldName] !== '';
+    };
+
     return (
         <div className="card">
             <div className="card-header" onClick={onToggle}>
@@ -587,11 +603,11 @@ function TradeEntry({ trades, onAddTrade, onUpdateTrade, onDeleteTrade, isExpand
             {isExpanded && (
                 <div className="card-content">
                     <div className="trade-entry">
-                        <form onSubmit={handleSubmit} className="trade-form">
+                        <form onSubmit={handleSubmit} className={`trade-form ${isFormFilled() ? 'portal-style' : ''}`}>
                             <div className="form-section">
                                 <h3>Basic Trade Info</h3>
                                 <div className="form-row">
-                                    <div className="form-group">
+                                    <div className={`form-group ${isFieldFilled('ticker') ? 'filled' : ''}`}>
                                         <label>Ticker Symbol</label>
                                         <input
                                             type="text"
@@ -602,7 +618,7 @@ function TradeEntry({ trades, onAddTrade, onUpdateTrade, onDeleteTrade, isExpand
                                             required
                                         />
                                     </div>
-                                    <div className="form-group">
+                                    <div className={`form-group ${isFieldFilled('entry') ? 'filled' : ''}`}>
                                         <label>Entry Price</label>
                                         <input
                                             type="number"
@@ -619,7 +635,7 @@ function TradeEntry({ trades, onAddTrade, onUpdateTrade, onDeleteTrade, isExpand
                                             Supports up to 4 decimal places for penny stocks
                                         </small>
                                     </div>
-                                    <div className="form-group">
+                                    <div className={`form-group ${isFieldFilled('position') ? 'filled' : ''}`}>
                                         <label>Position</label>
                                         <select
                                             className="form-control"
@@ -636,7 +652,7 @@ function TradeEntry({ trades, onAddTrade, onUpdateTrade, onDeleteTrade, isExpand
                             <div className="form-section">
                                 <h3>Strategy Configuration</h3>
                                 <div className="form-row">
-                                    <div className="form-group">
+                                    <div className={`form-group ${isFieldFilled('strategyType') ? 'filled' : ''}`}>
                                         <label>Strategy Type</label>
                                         <select
                                             className="form-control"
@@ -772,7 +788,7 @@ function TradeEntry({ trades, onAddTrade, onUpdateTrade, onDeleteTrade, isExpand
                             <div className="form-section">
                                 <h3>Trade Execution</h3>
                                 <div className="form-row">
-                                    <div className="form-group">
+                                    <div className={`form-group ${isFieldFilled('positionSize') ? 'filled' : ''}`}>
                                         <label>Position Size</label>
                                         <input
                                             type="text"

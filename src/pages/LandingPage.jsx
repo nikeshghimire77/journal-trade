@@ -65,6 +65,16 @@ function LandingPage() {
                     <div className="star star-8"></div>
                     <div className="star star-9"></div>
                     <div className="star star-10"></div>
+                    <div className="star star-11"></div>
+                    <div className="star star-12"></div>
+                    <div className="star star-13"></div>
+                    <div className="star star-14"></div>
+                    <div className="star star-15"></div>
+                    <div className="star star-16"></div>
+                    <div className="star star-17"></div>
+                    <div className="star star-18"></div>
+                    <div className="star star-19"></div>
+                    <div className="star star-20"></div>
                 </div>
 
                 {/* Falling Stars */}
@@ -74,48 +84,27 @@ function LandingPage() {
                     <div className="falling-star falling-star-3"></div>
                     <div className="falling-star falling-star-4"></div>
                     <div className="falling-star falling-star-5"></div>
+                    <div className="falling-star falling-star-6"></div>
+                    <div className="falling-star falling-star-7"></div>
+                    <div className="falling-star falling-star-8"></div>
+                    <div className="falling-star falling-star-9"></div>
+                    <div className="falling-star falling-star-10"></div>
+                    <div className="falling-star falling-star-11"></div>
+                    <div className="falling-star falling-star-12"></div>
+                    <div className="falling-star falling-star-13"></div>
+                    <div className="falling-star falling-star-14"></div>
+                    <div className="falling-star falling-star-15"></div>
+                    <div className="falling-star falling-star-9"></div>
+                    <div className="falling-star falling-star-10"></div>
+                    <div className="falling-star falling-star-11"></div>
+                    <div className="falling-star falling-star-12"></div>
+                    <div className="falling-star falling-star-13"></div>
+                    <div className="falling-star falling-star-14"></div>
+                    <div className="falling-star falling-star-15"></div>
                 </div>
 
                 <div className="container">
                     <div className="hero-content">
-                        <div className="hero-logo">
-                            <svg width="80" height="80" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                {/* Gradients */}
-                                <defs>
-                                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style={{ stopColor: '#4f46e5', stopOpacity: 1 }} />
-                                        <stop offset="50%" style={{ stopColor: '#10b981', stopOpacity: 1 }} />
-                                        <stop offset="100%" style={{ stopColor: '#f59e0b', stopOpacity: 1 }} />
-                                    </linearGradient>
-                                    <linearGradient id="innerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style={{ stopColor: '#1f2937', stopOpacity: 1 }} />
-                                        <stop offset="100%" style={{ stopColor: '#374151', stopOpacity: 1 }} />
-                                    </linearGradient>
-                                    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style={{ stopColor: '#ffffff', stopOpacity: 1 }} />
-                                        <stop offset="100%" style={{ stopColor: '#e5e7eb', stopOpacity: 1 }} />
-                                    </linearGradient>
-                                </defs>
-
-                                {/* Outer ring with gradient */}
-                                <circle cx="25" cy="25" r="23" stroke="url(#logoGradient)" strokeWidth="2" fill="none" />
-
-                                {/* Inner circle */}
-                                <circle cx="25" cy="25" r="15" fill="url(#innerGradient)" />
-
-                                {/* Chart line going up */}
-                                <path d="M10 30 L15 25 L20 28 L25 20 L30 22 L35 18 L40 21"
-                                    stroke="#10b981" strokeWidth="2" fill="none" strokeLinecap="round" />
-
-                                {/* NG Text */}
-                                <text x="25" y="22" textAnchor="middle" fill="#ffffff" fontSize="12" fontWeight="bold" fontFamily="Arial, sans-serif" filter="drop-shadow(0 0 4px rgba(255, 255, 255, 0.8))">NG</text>
-
-                                {/* Small trading indicator dots */}
-                                <circle cx="15" cy="25" r="1.5" fill="#10b981" />
-                                <circle cx="25" cy="20" r="1.5" fill="#f59e0b" />
-                                <circle cx="35" cy="18" r="1.5" fill="#ef4444" />
-                            </svg>
-                        </div>
                         <div className="hero-text">
                             <h1 className="hero-title">
                                 Master Your Trading Game
@@ -124,14 +113,37 @@ function LandingPage() {
                                 Transform your trading from guesswork to precision! Track every trade, uncover hidden patterns, and build a winning strategy. Whether you're a day trader or long-term investor, turn your journal into your secret weapon for market domination.
                             </p>
                             <div className="hero-actions">
-                                <div className="action-buttons">
-                                    <Link to="/signup" className="btn btn-primary btn-large">
-                                        <BookOpen size={20} />
-                                        <span>Get Started</span>
+                                <div className="cta-buttons-container">
+                                    <Link to="/signup" className="primary-cta-btn">
+                                        <div className="btn-bg-gradient"></div>
+                                        <div className="btn-content">
+                                            <div className="btn-icon-wrapper">
+                                                <BookOpen size={24} />
+                                                <div className="icon-ripple"></div>
+                                            </div>
+                                            <div className="btn-text-content">
+                                                <span className="btn-main-text">Start Journal</span>
+                                                <span className="btn-sub-text">Begin trading</span>
+                                            </div>
+                                            <div className="btn-arrow">→</div>
+                                        </div>
+                                        <div className="btn-shine"></div>
                                     </Link>
-                                    <Link to="/upload" className="btn btn-secondary btn-large">
-                                        <Upload size={20} />
-                                        <span>Restore Your Data</span>
+
+                                    <Link to="/upload" className="secondary-cta-btn">
+                                        <div className="btn-bg-gradient"></div>
+                                        <div className="btn-content">
+                                            <div className="btn-icon-wrapper">
+                                                <Upload size={24} />
+                                                <div className="icon-ripple"></div>
+                                            </div>
+                                            <div className="btn-text-content">
+                                                <span className="btn-main-text">Import Data</span>
+                                                <span className="btn-sub-text">Upload trades</span>
+                                            </div>
+                                            <div className="btn-arrow">→</div>
+                                        </div>
+                                        <div className="btn-shine"></div>
                                     </Link>
                                 </div>
                             </div>
@@ -159,31 +171,64 @@ function LandingPage() {
                                 </div>
                             </div>
 
-                            {/* Mind-Blowing Animated Trading Chart */}
+                            {/* Bullish Candlestick Chart */}
                             <div className="trading-chart">
                                 <div className="chart-container">
-                                    <div className="price-line"></div>
-                                    <div className="volume-bars">
-                                        <div className="volume-bar" style={{ height: '60%', animationDelay: '0s' }}></div>
-                                        <div className="volume-bar" style={{ height: '80%', animationDelay: '0.1s' }}></div>
-                                        <div className="volume-bar" style={{ height: '40%', animationDelay: '0.2s' }}></div>
-                                        <div className="volume-bar" style={{ height: '90%', animationDelay: '0.3s' }}></div>
-                                        <div className="volume-bar" style={{ height: '70%', animationDelay: '0.4s' }}></div>
-                                        <div className="volume-bar" style={{ height: '50%', animationDelay: '0.5s' }}></div>
-                                        <div className="volume-bar" style={{ height: '85%', animationDelay: '0.6s' }}></div>
-                                        <div className="volume-bar" style={{ height: '30%', animationDelay: '0.7s' }}></div>
-                                        <div className="volume-bar" style={{ height: '75%', animationDelay: '0.8s' }}></div>
-                                        <div className="volume-bar" style={{ height: '45%', animationDelay: '0.9s' }}></div>
-                                        <div className="volume-bar" style={{ height: '95%', animationDelay: '1s' }}></div>
-                                        <div className="volume-bar" style={{ height: '65%', animationDelay: '1.1s' }}></div>
-                                        <div className="volume-bar" style={{ height: '55%', animationDelay: '1.2s' }}></div>
-                                        <div className="volume-bar" style={{ height: '80%', animationDelay: '1.3s' }}></div>
-                                        <div className="volume-bar" style={{ height: '35%', animationDelay: '1.4s' }}></div>
+                                    <div className="candlestick-chart">
+                                        {/* Green Bullish Candles */}
+                                        <div className="candlestick bullish" style={{ height: '40%', bottom: '30%', animationDelay: '0s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
+                                        <div className="candlestick bullish" style={{ height: '60%', bottom: '25%', animationDelay: '0.2s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
+                                        <div className="candlestick bearish" style={{ height: '30%', bottom: '45%', animationDelay: '0.4s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
+                                        <div className="candlestick bullish" style={{ height: '80%', bottom: '15%', animationDelay: '0.6s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
+                                        <div className="candlestick bullish" style={{ height: '70%', bottom: '20%', animationDelay: '0.8s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
+                                        <div className="candlestick bullish" style={{ height: '50%', bottom: '30%', animationDelay: '1s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
+                                        <div className="candlestick bullish" style={{ height: '90%', bottom: '10%', animationDelay: '1.2s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
+                                        <div className="candlestick bearish" style={{ height: '20%', bottom: '50%', animationDelay: '1.4s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
+                                        <div className="candlestick bullish" style={{ height: '85%', bottom: '12%', animationDelay: '1.6s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
+                                        <div className="candlestick bullish" style={{ height: '75%', bottom: '18%', animationDelay: '1.8s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
+                                        <div className="candlestick bullish" style={{ height: '95%', bottom: '8%', animationDelay: '2s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
+                                        <div className="candlestick bullish" style={{ height: '100%', bottom: '5%', animationDelay: '2.2s' }}>
+                                            <div className="candle-wick"></div>
+                                            <div className="candle-body"></div>
+                                        </div>
                                     </div>
-                                    <div className="trade-signal"></div>
+                                    <div className="trend-line"></div>
                                     <div className="price-indicator">
                                         <span className="current-price">$1,247.85</span>
-                                        <span className="price-change">+2.34%</span>
+                                        <span className="price-change">+24.56% 🚀</span>
                                     </div>
                                     <div className="chart-grid">
                                         <div className="grid-line"></div>
